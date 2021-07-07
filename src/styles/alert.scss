@@ -1,0 +1,41 @@
+#alert {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ff6072;
+  border: 2px solid #ff6072;
+  border-radius: 16px;
+  background: #FFF;
+  
+  img {
+    border-radius: 14px 14px 0 0;
+  }
+
+  .avatar-winner {
+    margin-top: 16px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid #ff6072;
+  }
+  
+  strong {
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    margin-top: 16px;
+  }
+  
+  span {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    margin-top: 4px;
+    background-color: #ff6072;
+    color: #fff;
+    padding: 0px 28px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
