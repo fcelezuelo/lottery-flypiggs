@@ -54,14 +54,15 @@ export function NewSort() {
     const object = data.users.reduce((obj: any, item: any) => ((obj[item.display_name.toLowerCase()] = { avatar: item.logo, display_name: item.display_name }), obj), {});
     setProfiles(object);
   }, [])
+  // }, [sort.participants])
 
   useEffect(() => {
     setParticipants(sort.participants ? sort.participants : '');
     getAvatar();
   }, [])
+  // }, [getAvatar,sort.participants])
 
   useEffect(() => {
-    // console.log(profiles);
     if (sort.name === undefined || sort.participants === undefined) {
       history.push('/');
       return;
@@ -92,7 +93,6 @@ export function NewSort() {
         }
       })
 
-      // if (profiles) {
       const result = singleParticipants.map(singleParticipant => {
         if (profiles[`${singleParticipant.toLocaleLowerCase()}`] === undefined) {
           return {
