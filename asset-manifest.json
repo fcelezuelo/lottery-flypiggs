@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://fcelezuelo.github.io/lottery-flypiggs/static/css/main.3bf31062.chunk.css",
-    "main.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a9eb7988.chunk.js",
-    "main.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a9eb7988.chunk.js.map",
+    "main.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a27ccd7d.chunk.js",
+    "main.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a27ccd7d.chunk.js.map",
     "runtime-main.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/runtime-main.a9256d9b.js",
     "runtime-main.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/runtime-main.a9256d9b.js.map",
     "static/js/2.e9aa250e.chunk.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/2.e9aa250e.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.a9256d9b.js",
     "static/js/2.e9aa250e.chunk.js",
     "static/css/main.3bf31062.chunk.css",
-    "static/js/main.a9eb7988.chunk.js"
+    "static/js/main.a27ccd7d.chunk.js"
   ]
 }
