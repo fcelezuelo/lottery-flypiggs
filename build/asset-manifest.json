@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.3bf31062.chunk.css",
-    "main.js": "./static/js/main.1d1e3fef.chunk.js",
-    "main.js.map": "./static/js/main.1d1e3fef.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.0c2571c8.js",
-    "runtime-main.js.map": "./static/js/runtime-main.0c2571c8.js.map",
-    "static/js/2.e9aa250e.chunk.js": "./static/js/2.e9aa250e.chunk.js",
-    "static/js/2.e9aa250e.chunk.js.map": "./static/js/2.e9aa250e.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.3bf31062.chunk.css.map": "./static/css/main.3bf31062.chunk.css.map",
-    "static/js/2.e9aa250e.chunk.js.LICENSE.txt": "./static/js/2.e9aa250e.chunk.js.LICENSE.txt",
-    "static/media/flypiggstext.dc2a8b9c.png": "./static/media/flypiggstext.dc2a8b9c.png",
-    "static/media/fogos.80e8fd2b.gif": "./static/media/fogos.80e8fd2b.gif",
-    "static/media/logo.dc126ffe.png": "./static/media/logo.dc126ffe.png"
+    "main.css": "https://fcelezuelo.github.io/lottery-flypiggs/static/css/main.3bf31062.chunk.css",
+    "main.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a27ccd7d.chunk.js",
+    "main.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/main.a27ccd7d.chunk.js.map",
+    "runtime-main.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/runtime-main.a9256d9b.js",
+    "runtime-main.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/runtime-main.a9256d9b.js.map",
+    "static/js/2.e9aa250e.chunk.js": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/2.e9aa250e.chunk.js",
+    "static/js/2.e9aa250e.chunk.js.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/2.e9aa250e.chunk.js.map",
+    "index.html": "https://fcelezuelo.github.io/lottery-flypiggs/index.html",
+    "static/css/main.3bf31062.chunk.css.map": "https://fcelezuelo.github.io/lottery-flypiggs/static/css/main.3bf31062.chunk.css.map",
+    "static/js/2.e9aa250e.chunk.js.LICENSE.txt": "https://fcelezuelo.github.io/lottery-flypiggs/static/js/2.e9aa250e.chunk.js.LICENSE.txt",
+    "static/media/flypiggstext.dc2a8b9c.png": "https://fcelezuelo.github.io/lottery-flypiggs/static/media/flypiggstext.dc2a8b9c.png",
+    "static/media/fogos.80e8fd2b.gif": "https://fcelezuelo.github.io/lottery-flypiggs/static/media/fogos.80e8fd2b.gif",
+    "static/media/logo.dc126ffe.png": "https://fcelezuelo.github.io/lottery-flypiggs/static/media/logo.dc126ffe.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0c2571c8.js",
+    "static/js/runtime-main.a9256d9b.js",
     "static/js/2.e9aa250e.chunk.js",
     "static/css/main.3bf31062.chunk.css",
-    "static/js/main.1d1e3fef.chunk.js"
+    "static/js/main.a27ccd7d.chunk.js"
   ]
 }

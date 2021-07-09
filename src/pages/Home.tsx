@@ -5,18 +5,28 @@ import { SortContext } from '../contexts/SortContext';
 import Swal from 'sweetalert2';
 
 import logoImg from '../assets/images/logo.png';
+import { AuthContext } from '../contexts/AuthContext';
 
 import '../styles/home.scss';
+import { useEffect } from 'react';
 
 export function Home() {
   const history = useHistory();
 
   const [, setSort] = useContext(SortContext);
+  const { auth } = useContext(AuthContext);
 
   const [participants, setParticipants] = useState('');
   const [sortName, setSortName] = useState('');
   // const [sortDate, setSortDate] = useState('');
   // const [profile, setProfile] = useState([{}]);
+
+  useEffect(() => {
+    console.log(auth);
+    if (auth === false) {
+      history.push('/');
+    }
+  }, [])
 
   async function handleCreateSort(event: FormEvent) {
     event.preventDefault();

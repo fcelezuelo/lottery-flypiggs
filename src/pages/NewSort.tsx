@@ -12,6 +12,7 @@ import logoImg from '../assets/images/logo.png';
 
 import '../styles/new-sort.scss';
 import { SortContext } from '../contexts/SortContext';
+import { AuthContext } from '../contexts/AuthContext';
 
 const MySwal = withReactContent(Swal);
 
@@ -23,6 +24,8 @@ type ParticipantsParsed = {
 
 export function NewSort() {
   const [sort] = useContext(SortContext);
+  const { auth } = useContext(AuthContext);
+
   const [profiles, setProfiles] = useState<any>(null)
 
   const history = useHistory();
@@ -53,67 +56,65 @@ export function NewSort() {
     });
     const object = data.users.reduce((obj: any, item: any) => ((obj[item.display_name.toLowerCase()] = { avatar: item.logo, display_name: item.display_name }), obj), {});
     setProfiles(object);
-  // }, [])
   }, [sort.participants])
 
   useEffect(() => {
     setParticipants(sort.participants ? sort.participants : '');
     getAvatar();
-  // }, [])
-  }, [getAvatar,sort.participants])
+  }, [getAvatar, sort.participants])
 
   useEffect(() => {
-    if (sort.name === undefined || sort.participants === undefined) {
-      history.push('/');
-      return;
-    } else if (sort.name === '' || sort.participants === '') {
-      history.push('/');
+    if (auth) {
+      if (sort.name === undefined || sort.participants === undefined) {
+        history.push('/');
+        return;
+      } else if (sort.name === '' || sort.participants === '') {
+        history.push('/');
 
-      Swal.fire({
-        icon: 'warning',
-        title: 'Atenção',
-        text: 'Preencha o nome do sorteio e os participantes.',
-        showConfirmButton: false,
-        showCloseButton: true,
-      })
-      return;
+        Swal.fire({
+          icon: 'warning',
+          title: 'Atenção',
+          text: 'Preencha o nome do sorteio e os participantes.',
+          showConfirmButton: false,
+          showCloseButton: true,
+        })
+        return;
+      }
+
+      if (profiles) {
+        const participantsArray = participants.split(',');
+        const singleParticipants: string[] = [];
+
+        setTotalEntries(participantsArray.length);
+
+        participantsArray.forEach(participantArray => {
+          participantArray = participantArray.trim();
+          if (!singleParticipants.includes(participantArray)) {
+            singleParticipants.push(participantArray);
+          }
+        })
+
+        const result = singleParticipants.map(singleParticipant => {
+          if (profiles[`${singleParticipant.toLocaleLowerCase()}`] === undefined) {
+            return {
+              name: singleParticipant,
+              entries: (participantsArray.filter(x => x === singleParticipant).length),
+              avatar: ''
+            };
+          } else {
+            return {
+              name: profiles[`${singleParticipant.toLocaleLowerCase()}`].display_name,
+              entries: (participantsArray.filter(x => x === singleParticipant).length),
+              avatar: profiles[`${singleParticipant.toLocaleLowerCase()}`].avatar
+            };
+          }
+        });
+
+        setParticipantsParsed(result);
+      }
+
     }
-
-    if (profiles) {
-      const participantsArray = participants.split(',');
-      const singleParticipants: string[] = [];
-
-      setTotalEntries(participantsArray.length);
-
-      // participantsArray.filter(participantArray => {
-      participantsArray.forEach(participantArray => {
-        participantArray = participantArray.trim();
-        if (!singleParticipants.includes(participantArray)) {
-          singleParticipants.push(participantArray);
-        }
-      })
-
-      const result = singleParticipants.map(singleParticipant => {
-        if (profiles[`${singleParticipant.toLocaleLowerCase()}`] === undefined) {
-          return {
-            name: singleParticipant,
-            entries: (participantsArray.filter(x => x === singleParticipant).length),
-            avatar: ''
-          };
-        } else {
-          return {
-            name: profiles[`${singleParticipant.toLocaleLowerCase()}`].display_name,
-            entries: (participantsArray.filter(x => x === singleParticipant).length),
-            avatar: profiles[`${singleParticipant.toLocaleLowerCase()}`].avatar
-          };
-        }
-      });
-
-      setParticipantsParsed(result);
-    }
-
-    }, [participants, sort.name, sort.participants, history, profiles])
-  // }, [participants, profiles])
+  }, [auth, participants, sort.name, sort.participants, history, profiles])
 
   function handleGetWinner() {
     const participantsArray = participants.split(',');
@@ -152,7 +153,7 @@ export function NewSort() {
           <span>FLYPIGGS</span>
         </div>
         <div>
-          <Link className="navbar-button" to="/">Novo Sorteio</Link>
+          <Link className="navbar-button" to="/Home">Novo Sorteio</Link>
         </div>
       </header>
 
