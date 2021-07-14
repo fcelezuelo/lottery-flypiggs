@@ -1,6 +1,8 @@
 import { useContext, FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import Swal from 'sweetalert2';
+
 import { AuthContext } from '../contexts/AuthContext';
 
 import '../styles/login.scss';
@@ -18,6 +20,14 @@ export function Login() {
     if (process.env.REACT_APP_LOGIN === login && process.env.REACT_APP_PASSWORD === password) {
       setAuth(true);
       history.push('/Home');
+    }else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Falha no Login',
+        text: 'Login e/ou senha incorretos.',
+        showConfirmButton: false,
+        showCloseButton: true,
+      })
     }
   }
 
